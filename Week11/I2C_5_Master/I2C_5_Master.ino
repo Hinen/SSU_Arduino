@@ -19,8 +19,8 @@ int btn3OldState = LOW;
 void setup() {
   Wire.begin();
   pinMode(btn1, INPUT);
-
-  Serial.begin(9600);
+  pinMode(btn2, INPUT);
+  pinMode(btn3, INPUT);
 }
 
 void loop() {
