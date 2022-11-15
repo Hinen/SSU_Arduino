@@ -13,8 +13,6 @@ void setup() {
   Wire.begin(8);
   Wire.onReceive(receiveEvent);
 
-  Serial.begin(9600);
-
   pinMode(led, OUTPUT);
 }
 
@@ -22,11 +20,7 @@ void loop() {
   delay(100);
 }
 
-void receiveEvent(int howMany) {
-  Serial.println("Test");
-  
+void receiveEvent(int value) {
   int btnFlag = Wire.read();
   digitalWrite(led, btnFlag == ButtonFlag::PRESSING);
-
-  Serial.println(btnFlag);
 }
